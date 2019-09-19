@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="studentNameSpace" >
+<resultMap id="studentMap" type="bean.student">
+    <id property="id" column="sid"/>
+    <result property="name" column="sname"/>
+    <association property="card" resultMap="cardNameSpace.cardMap"/>
+</resultMap>
+    <select id="findById" parameterType="int" resultMap="studentMap">
+        select * from students s,cards c where c.cid=s.scid and sid=#{id};
+    </select>
+</mapper>
