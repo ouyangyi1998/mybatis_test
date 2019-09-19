@@ -21,7 +21,7 @@ public class MybatisUtil {
             throw new RuntimeException(e);
         }
     }
-    private MybatisUtil(){};
+    private MybatisUtil(){}
     public  static  SqlSession getSqlSession()
     {
         SqlSession sqlSession=threadLocal.get();
